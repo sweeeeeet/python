@@ -21,3 +21,37 @@ def get_point():
 #解包 unpack
 x,y=get_point()
 print(x,y)
+
+
+
+#高阶函数:在参数中允许传入函数
+def addPlus(x,y,f):
+    return f(x)+f(y)
+
+print(addPlus(2,3,abs))
+
+#函数返回函数
+def sum(x):
+    m=0
+    def f():
+        for i in range(10):
+            m=i+x
+        return m
+    return f
+r=sum(3)
+#对函数的调用结果是一个函数
+print(r)
+#对r调用才能得到结果
+print(r())
+
+
+print('=='*10)
+#关键字参数
+def person(name, age, **kw):
+    if 'city' in kw:
+        # 有city参数
+        pass
+    if 'job' in kw:
+        # 有job参数
+        pass
+    print('name:', name, 'age:', age, 'other:', kw)
