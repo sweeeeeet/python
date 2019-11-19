@@ -55,3 +55,16 @@ def person(name, age, **kw):
         # 有job参数
         pass
     print('name:', name, 'age:', age, 'other:', kw)
+
+#拼接两个列表
+a=[1,2]
+b=[3,4]
+#将b拼接到a上，并不会创建新的对象
+print(a.extend(b))
+
+#字符串拼接
+a=["sd","sd","ddd"]
+#join前面的字符串对象代表拼接的分割符是什么
+result="；".join(a)
+
+print(a*3)
